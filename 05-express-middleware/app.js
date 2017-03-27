@@ -2,9 +2,7 @@
 
 const  express  = require('express');
 const app = express();
+const route = require('./routes/chickens')
 
-app.use(express.static('pages'))
-app.get('/home',(req,res, next) => {
-  // res.send('pages/home.html')
-})
-app.listen(8080)
+app.use(route)
+app.listen(8081)
