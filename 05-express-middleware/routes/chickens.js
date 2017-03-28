@@ -2,14 +2,12 @@ const { Router } = require('express');
 const path = require('path');
 const chickenRouter = Router();
 
-chickenRouter.use((req,res,next) => {
-  let egg = req. originalUrl
+chickenRouter.use((req, res, next) => {
+    let egg = req.originalUrl
+//checks if url has egg in it
+    if (egg.includes('egg')) {
 
-  if(egg.includes('egg')) {
-  console.log("egg",egg)
-  // // includes('egg');
-  // if(egg) {
-    console.log(`You found an Easter egg at ${ new Date() }
+      console.log(`You found an Easter egg at ${ new Date() }
              ,ggadddd8888888bbbbaaa,_
      ,ad888,      Y88,      Y888baa,
    ,dP"  "Y8b,      "Y8b,      "Y8888ba,
@@ -26,22 +24,20 @@ b,"Y88ba,         ""Y88baa,_         """Y888bd"
    Ya,     ""Y888ba,_           "d88P"
      "Yb,,_     ""Y888baa,__,,adP""'
          """YYYY8888888PPPP"""';`)
-  }
+    }
     next()
   })
-// })
+
 chickenRouter.get('/home', (req, res, next) => {
   res.sendFile(path.join(__dirname, '../pages', 'home.html'));
 })
 
-chickenRouter.get('/see-our-chickens', (req,res, next) => {
+chickenRouter.get('/see-our-chickens', (req, res, next) => {
   res.sendFile(path.join(__dirname, '../pages', 'see-our-chickens.html'));
 })
 
 chickenRouter.get('/see-our-eggs', (req, res, next) => {
   res.sendFile(path.join(__dirname, '../pages', 'see-our-eggs.html'));
 });
-
-
 
 module.exports = chickenRouter;
