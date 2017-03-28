@@ -1,7 +1,7 @@
-extend layout.pug
+extends layout.pug
 
 block content
   h1 Our Current Inventory Includes
-    ul
-      each bakedGood in BakedGoods
-       each
+  ul
+    each bakedGood in bakedGoods
+      li #{bakedGood.name} : #{bakedGood.price}

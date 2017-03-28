@@ -2,28 +2,8 @@
 
 const express = require('express');
 const app = express();
-const routes = require('./')
-const bakedGoods = [{
-  name: pizza,
-  price: 5.00
-},
-{
-  name: pretzelTwists,
-  price: 6.00
-},
-{
-  name: donuts,
-  price: 3.00
-},
-{
-  name: muffin,
-  price: 2.00
-},
-{
-  name: coffee,
-  price: 5.00
-}
-];
+const routes = require('./routes/route.js')
+
 app.use(express.static('public'));
 app.set('view engine', 'pug');
 
@@ -34,6 +14,8 @@ app.set('port', port);
 app.listen(port, ()=>{
   console.log(`listening on port ${port}`);
 });
+
+
 
 
 
