@@ -1,4 +1,20 @@
-//- a.foot-nav(class={active: loggedIn === true} href='/') Logout
-//- a.foot-nav(class={active: loggedIn === false} href='/') Login/Register
+- var param = url
+mixin link(href, name)
+  a(href=href)&attributes(attributes)= name
 
-p Hey, and stuff ill be naving shortly
+
+case  param
+  when '/home'
+    +link('/about', 'about')
+    +link('/inventory', 'inventory')
+  when '/about'
+    +link('home', 'home')
+    +link('inventory', 'inventory')
+  when '/inventory'
+    +link('/home','home')
+    +link('/about','about')
+  default
+    +link('/home','home')
+    +link('/about','about')
+
+h1 #{url}
