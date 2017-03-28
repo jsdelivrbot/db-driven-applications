@@ -3,20 +3,25 @@
 const express = require('express');
 const app = express();
 const routes = require('./')
-const inventory = [{
-  pizza: 5.99
+const bakedGoods = [{
+  name: pizza,
+  price: 5.00
 },
 {
-  pretzelTwists: 4.50
+  name: pretzelTwists,
+  price: 6.00
 },
 {
-  donuts: .50
+  name: donuts,
+  price: 3.00
 },
 {
-  muffins: 3.00
+  name: muffin,
+  price: 2.00
 },
 {
-  coffee: 5.00
+  name: coffee,
+  price: 5.00
 }
 ];
 app.use(express.static('public'));
