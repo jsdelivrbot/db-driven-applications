@@ -1,0 +1,19 @@
+body {
+  background-color: lightgrey;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+
+img {
+  max-width: 50%;
+  border-radius: 48%;
+  display: inline-block;
+}
+
+a {
+  margin-left: 4rem;
+}
+
+ul {
+    list-style: none;
+  }
